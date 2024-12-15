@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
+
 }
 
 android {
@@ -49,7 +50,8 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
     implementation ("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
-    implementation ("com.github.bumtech.glide:glide:4.13.0")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation ("com.google.firebase:firebase-database-ktx")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
