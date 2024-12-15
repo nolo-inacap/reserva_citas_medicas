@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "528141808884",
+    "firebase_url": "https://fir-app-c623a-default-rtdb.firebaseio.com",
+    "project_id": "fir-app-c623a",
+    "storage_bucket": "fir-app-c623a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528141808884:android:a1fc5b2ebeeea94426daa1",
+        "android_client_info": {
+          "package_name": "com.example.reservacitasmedicas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy1LWZznx5ePfNYYeGcTZ7dhFW2LdGFP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
