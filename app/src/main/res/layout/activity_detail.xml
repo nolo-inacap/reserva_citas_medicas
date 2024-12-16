@@ -22,7 +22,7 @@
                 android:background="@drawable/background_green">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/backBtn"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="16dp"
@@ -40,10 +40,10 @@
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                    app:layout_constraintBottom_toBottomOf="@+id/backBtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageView5" />
+                    app:layout_constraintTop_toTopOf="@+id/backBtn" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline"
@@ -53,9 +53,9 @@
                     app:layout_constraintGuide_begin="206dp" />
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/img"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
                     app:srcCompat="@drawable/doctor" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/nameTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="48dp"
@@ -74,18 +74,18 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@+id/guideline"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                    app:layout_constraintTop_toBottomOf="@+id/backBtn" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/specialTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Especialidad"
                     android:textColor="@color/white"
-                    app:layout_constraintEnd_toEndOf="@+id/textView8"
-                    app:layout_constraintStart_toStartOf="@+id/textView8"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                    app:layout_constraintEnd_toEndOf="@+id/nameTxt"
+                    app:layout_constraintStart_toStartOf="@+id/nameTxt"
+                    app:layout_constraintTop_toBottomOf="@+id/nameTxt" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
@@ -96,7 +96,7 @@
                     android:background="@drawable/half_black_bg"
                     app:layout_constraintEnd_toStartOf="@+id/guideline"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9">
+                    app:layout_constraintTop_toBottomOf="@+id/specialTxt">
 
                     <ImageView
                         android:id="@+id/imageView7"
@@ -109,7 +109,7 @@
                         app:srcCompat="@drawable/calendar" />
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/dateTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -131,7 +131,7 @@
                         app:srcCompat="@drawable/clock" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/timeTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -163,7 +163,7 @@
                         app:srcCompat="@drawable/location" />
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/addressTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -185,14 +185,15 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView13"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pacientes"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:layout_gravity="center"/>
 
                         <TextView
-                            android:id="@+id/textView14"
+                            android:id="@+id/patiensTxt"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
@@ -202,7 +203,7 @@
                     </LinearLayout>
 
                     <View
-                        android:id="@+id/view"
+
                         android:layout_width="1dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -216,14 +217,15 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView13"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Experiencia"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:layout_gravity="center"/>
 
                         <TextView
-                            android:id="@+id/textView14"
+                            android:id="@+id/experiensTxt"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
@@ -251,15 +253,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Puntuación"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:layout_gravity="center"/>
 
                         <TextView
-                            android:id="@+id/textView14"
-                            android:layout_width="match_parent"
+                            android:id="@+id/ratingTxt"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="8dp"
                             android:drawableStart="@drawable/star"
+                            android:drawablePadding="8dp"
                             android:text="-"
                             android:textAlignment="center"
                             android:textColor="@color/darkGreen" />
@@ -279,7 +283,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView16"
+                    android:id="@+id/bioTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="bio"
@@ -290,21 +294,164 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/imageView10"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
-                        android:layout_weight="1"
-                        android:padding="12dp"
-                        app:srcCompat="@drawable/website" />
-
-                    <TextView
-                        android:id="@+id/textView17"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:id="@+id/websiteBtn"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="TextView" />
+                        android:layout_weight="0.2"
+                        android:orientation="vertical">
+
+                        <ImageView
+
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/light_green_bg"
+                            android:padding="12dp"
+                            app:srcCompat="@drawable/website" />
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:text="Sitio Web"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/messageBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical">
+
+                        <ImageView
+
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/light_green_bg"
+                            android:padding="12dp"
+                            app:srcCompat="@drawable/message" />
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:text="Mensaje"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/callBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical">
+
+                        <ImageView
+
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/light_green_bg"
+                            android:padding="12dp"
+                            app:srcCompat="@drawable/call" />
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:text="Llamadas"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/directionBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical">
+
+                        <ImageView
+
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/light_green_bg"
+                            android:padding="12dp"
+                            app:srcCompat="@drawable/direction" />
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:text="Dirección"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/shareBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/light_green_bg"
+                            android:padding="12dp"
+                            app:srcCompat="@drawable/share" />
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:text="Compartir"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
+
+                <!--style="@android:style/Widget.Button"-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:textColor="@color/white"
+                    android:background="@drawable/green_bg"
+                    android:id="@+id/makeBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Crear Reserva"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
