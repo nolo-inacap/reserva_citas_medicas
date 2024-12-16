@@ -1,13 +1,16 @@
 package com.example.reservacitasmedicas.Model
 
+import android.os.Build
 import android.os.Parcel
 import android.os.Parcelable
+
+
 
 data class DoctorsModel(
     val Address:String="",
     val Biography:String="",
     val Id:Int=0,
-    val Name:String="",
+    var Name:String="",
     val Picture:String="",
     val Special:String="",
     val Experience:Int=0,
@@ -18,8 +21,9 @@ data class DoctorsModel(
     val Mobile:String="",
     val Patiens:String="",
     val Rating:Double=0.0,
-    val Site:String=""
-):Parcelable {
+    val Site:String="",
+    var Reservas: List<AppointmentModel>? =null
+): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),
         parcel.readString().toString(),
@@ -35,7 +39,8 @@ data class DoctorsModel(
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readDouble(),
-        parcel.readString().toString()
+        parcel.readString().toString(),
+        parcel.createTypedArrayList(AppointmentModel)
     ) {
     }
 
@@ -55,6 +60,9 @@ data class DoctorsModel(
         parcel.writeString(Patiens)
         parcel.writeDouble(Rating)
         parcel.writeString(Site)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            parcel.writeTypedList(Reservas, flags)
+        }
     }
 
     override fun describeContents(): Int {

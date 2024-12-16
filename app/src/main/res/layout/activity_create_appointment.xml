@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CreateAppointmentActivity">
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Selección de Fecha -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar Fecha"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/btnSelectDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar Fecha"
+                android:background="@color/darkGreen"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/tvSelectedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha seleccionada: "
+                android:layout_marginTop="8dp" />
+
+            <!-- Selección de Hora -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar Hora"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/btnSelectTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar Hora"
+                android:backgroundTint="@color/darkGreen"/>
+
+            <TextView
+                android:id="@+id/tvSelectedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hora seleccionada: "
+                android:layout_marginTop="8dp" />
+
+            <!-- Entrada de Nombre -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del Paciente"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/etPatientName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Escribe el nombre del paciente"
+                android:inputType="textPersonName" />
+
+            <!-- Entrada de RUT -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RUT del Paciente"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/etRUT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Escribe el RUT del paciente"
+                android:inputType="text" />
+
+            <!-- Entrada de Teléfono -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teléfono del Paciente"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Escribe el teléfono del paciente"
+                android:inputType="phone" />
+
+            <!-- Botón para Guardar Cita -->
+            <Button
+                android:id="@+id/btnSaveAppointment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Guardar Cita"
+                android:layout_marginTop="24dp"
+                android:background="@color/darkGreen"
+                android:textColor="@android:color/white" />
+
+            <NumberPicker
+                android:id="@+id/numberPickerDates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

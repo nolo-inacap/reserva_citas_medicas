@@ -1,25 +1,27 @@
 package com.example.reservacitasmedicas.Activity
 
+import android.content.Context
 import android.content.Intent
 import android.location.Address
 import android.net.Uri
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
+import com.example.reservacitasmedicas.Model.AppointmentModel
 import com.example.reservacitasmedicas.Model.DoctorsModel
-import com.example.reservacitasmedicas.R
 import com.example.reservacitasmedicas.databinding.ActivityDetailBinding
+import com.google.firebase.database.FirebaseDatabase
 
 class DetailActivity : BaseActivity() {
+    var context:Context? = null
     private lateinit var binding: ActivityDetailBinding
     private lateinit var item: DoctorsModel
+    private val firebaseDatabase= FirebaseDatabase.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        context=this
 
         getBundle()
 
@@ -27,7 +29,7 @@ class DetailActivity : BaseActivity() {
 
     private fun getBundle() {
         item = intent.getParcelableExtra("object")!!
-
+        val position = intent.getIntExtra("position",0)
         binding.apply {
             specialTxt.text = item.Special
             patiensTxt.text = item.Patiens
@@ -79,6 +81,20 @@ class DetailActivity : BaseActivity() {
                 )
                 startActivity(Intent.createChooser(intent,"Escoje Uno"))
             }
+
+            makeBtn.setOnClickListener {
+                /*
+                val Dostor =AppointmentModel()
+                val Reservas=AppointmentModel("10/10/10","","","")
+                val arrayList=ArrayList<AppointmentModel>()
+                arrayList.add(Reservas)
+                item.Reservas= arrayList.toList()
+                val ref=firebaseDatabase.getReference("Doctors")
+                ref.child("$position").setValue(item)*/
+                val formulario=Intent(context!!,CreateAppointmentActivity::class.java)
+                startActivity(formulario)
+            }
+
             Glide.with(this@DetailActivity)
                 .load(item.Picture)
                 .into(img)

@@ -2,6 +2,7 @@ package com.example.reservacitasmedicas.Adapter
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
 import com.example.reservacitasmedicas.Activity.DetailActivity
+import com.example.reservacitasmedicas.Model.AppointmentModel
 import com.example.reservacitasmedicas.Model.DoctorsModel
 import com.example.reservacitasmedicas.databinding.ViewholderNearbyDoctorBinding
 
@@ -37,6 +39,8 @@ class NearDoctorsAdapter(val items:MutableList<DoctorsModel>):RecyclerView.Adapt
         holder.binding.specialTxt.text=items[position].Special
         holder.binding.costTxt.text=items[position].Cost
 
+        Log.i("asd", "onBindViewHolder: $holder ${items[position]}")
+
         Glide.with(holder.itemView.context)
             .load(items[position].Picture)
             .apply{ RequestOptions().transform(CenterCrop())}
@@ -44,6 +48,7 @@ class NearDoctorsAdapter(val items:MutableList<DoctorsModel>):RecyclerView.Adapt
 
         holder.binding.root.setOnClickListener {
             val intent=Intent(context,DetailActivity::class.java)
+            intent.putExtra("position",position)
             intent.putExtra("object",items[position])
             context?.startActivity(intent)
         }
