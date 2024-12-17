@@ -4,17 +4,21 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class AppointmentModel(
-    val Date:String="",
-    val Time:String="",
-    val Rut:String="",
-    val Phone:String="",
-    val Name:String=""
+    var Id: String = "",
+    var Date:String="",
+    var Time:String="",
+    var Rut:String="",
+    var Phone:String="",
+    var Email:String="",
+    var Name:String="",
+    val Available: Int = 1
 ):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
-        parcel.readInt().toString(),
+        parcel.readString().toString(),
+        parcel.readString().toString(),
         parcel.readString().toString()
     ) {
     }
@@ -24,6 +28,7 @@ data class AppointmentModel(
         parcel.writeString(Time)
         parcel.writeString(Rut)
         parcel.writeString(Phone)
+        parcel.writeString(Email)
         parcel.writeString(Name)
     }
 

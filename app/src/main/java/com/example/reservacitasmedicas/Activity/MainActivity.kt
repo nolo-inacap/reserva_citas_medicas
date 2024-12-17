@@ -3,14 +3,9 @@ package com.example.reservacitasmedicas.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reservacitasmedicas.Adapter.NearDoctorsAdapter
-import com.example.reservacitasmedicas.R
 import com.example.reservacitasmedicas.ViewModel.MainViewModel
 import com.example.reservacitasmedicas.databinding.ActivityMainBinding
 
@@ -24,6 +19,7 @@ class MainActivity : BaseActivity() {
         setContentView(binding.root)
 
         initNearByDoctor()
+        //addDoctorToFirestore()
 
     }
 

@@ -8,7 +8,7 @@
     tools:context=".Activity.CreateAppointmentActivity">
 
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <!-- Selección de Fecha -->
-            <TextView
+            <!--<TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Seleccionar Fecha"
@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Seleccionar Fecha"
-                android:background="@color/darkGreen"
+                android:backgroundTint="@color/darkGreen"
                 android:textColor="@color/white"/>
 
             <TextView
@@ -42,8 +42,8 @@
                 android:text="Fecha seleccionada: "
                 android:layout_marginTop="8dp" />
 
-            <!-- Selección de Hora -->
-            <TextView
+            Selección de Hora -->
+            <!--<TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Seleccionar Hora"
@@ -65,7 +65,7 @@
                 android:text="Hora seleccionada: "
                 android:layout_marginTop="8dp" />
 
-            <!-- Entrada de Nombre -->
+            Entrada de Nombre -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Escribe el nombre del paciente"
-                android:inputType="textPersonName" />
+                android:inputType="text" />
 
             <!-- Entrada de RUT -->
             <TextView
@@ -91,7 +91,7 @@
                 android:layout_marginTop="16dp" />
 
             <EditText
-                android:id="@+id/etRUT"
+                android:id="@+id/etRut"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Escribe el RUT del paciente"
@@ -110,24 +110,90 @@
                 android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:hint="Escribe el teléfono del paciente"
+                android:hint="Escribe el Teléfono del paciente"
                 android:inputType="phone" />
 
-            <!-- Botón para Guardar Cita -->
-            <Button
-                android:id="@+id/btnSaveAppointment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Guardar Cita"
-                android:layout_marginTop="24dp"
-                android:background="@color/darkGreen"
-                android:textColor="@android:color/white" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email del Paciente"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
 
-            <NumberPicker
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Escribe el Email del paciente"
+                android:inputType="textEmailAddress" />
+
+                <!-- Botón para Guardar Cita -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true">
+
+                <Button
+                    android:id="@+id/btnSaveAppointment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Guardar Cita"
+                    android:backgroundTint="@color/darkGreen"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnEditAppointment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Editar"
+                    android:backgroundTint="#FF9800"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnDisableAppointment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Deshabilitar"
+                    android:backgroundTint="#E91E63"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnRefrescar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Actualizar"
+                    android:backgroundTint="#00BCD4"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </GridLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAppointments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+            <!--<NumberPicker
                 android:id="@+id/numberPickerDates"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
+                android:layout_height="wrap_content" />-->
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
