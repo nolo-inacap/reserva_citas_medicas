@@ -1,5 +1,6 @@
 package com.example.reservacitasmedicas.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reservacitasmedicas.Adapter.NearDoctorsAdapter
 import com.example.reservacitasmedicas.ViewModel.MainViewModel
 import com.example.reservacitasmedicas.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -15,12 +17,22 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityMainBinding.inflate(layoutInflater)
+
+        // Verificar si el usuario está autenticado
+        if (FirebaseAuth.getInstance().currentUser == null) {
+            // Si el usuario no está autenticado, redirigir a la SplashActivity
+            val intent = Intent(this, SplashActivity::class.java)
+            startActivity(intent)
+            finish() // Finaliza la actividad actual para evitar que el usuario regrese a ella sin autenticarse
+            return // Asegúrate de no continuar con la ejecución del código
+        }
+
+        // Si está autenticado, continuar con la inicialización de la actividad
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initNearByDoctor()
         //addDoctorToFirestore()
-
     }
 
     private fun initNearByDoctor() {
@@ -47,9 +59,7 @@ class MainActivity : BaseActivity() {
 
                 // Ocultar el ProgressBar una vez que los datos han sido cargados
                 progressBar.visibility = View.GONE
-
             })
         }
     }
-
 }

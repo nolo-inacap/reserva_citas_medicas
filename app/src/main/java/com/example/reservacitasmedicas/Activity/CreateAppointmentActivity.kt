@@ -111,7 +111,7 @@ class CreateAppointmentActivity : BaseActivity() {
     }
     private fun getAllAppointments() {
         db.collection("Appointments")
-            .whereEqualTo("habilitado", 1)
+            .whereEqualTo("Available", 1)
             .get()
             .addOnSuccessListener { result ->
                 appointmentList.clear()
@@ -149,7 +149,7 @@ class CreateAppointmentActivity : BaseActivity() {
 
     private fun disableAppointment(documentId: String) {
         db.collection("Appointments").document(documentId)
-            .update("habilitado", 0)
+            .update("Available", 0)
             .addOnSuccessListener {
                 getAllAppointments()
             }

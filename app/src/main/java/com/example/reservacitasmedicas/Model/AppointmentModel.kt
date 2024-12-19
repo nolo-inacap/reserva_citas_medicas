@@ -19,17 +19,21 @@ data class AppointmentModel(
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
-        parcel.readString().toString()
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readInt()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(Id)
         parcel.writeString(Date)
         parcel.writeString(Time)
         parcel.writeString(Rut)
         parcel.writeString(Phone)
         parcel.writeString(Email)
         parcel.writeString(Name)
+        parcel.writeInt(Available)
     }
 
     override fun describeContents(): Int {

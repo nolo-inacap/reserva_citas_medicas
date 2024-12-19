@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/consulta_solo_con_ndoctores_que_confies"
+                android:text="@string/MediApp_nDoctores_de_confianza"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="40sp"

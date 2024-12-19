@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">reserva citas medicas</string>
-    <string name="consulta_solo_con_ndoctores_que_confies">Consulta solo con \n<font color='#1FC29D'>Doctores que confies</font></string>
+    <string name="MediApp_nDoctores_de_confianza"><font color='#1FC29D'>MediApp</font> \nDoctores de Confianza</string>
 </resources>
